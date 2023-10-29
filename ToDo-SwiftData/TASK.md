@@ -1,7 +1,7 @@
 #  TASK Roadmap
 
 ## Data layer
-Define data models (🟠)
+Define data models (✅)
 Create a repository to manage notes (🟠)
 Add total count of completed and uncompleted notes (🟠)
 Create a repository to manage user profile (🟠)
