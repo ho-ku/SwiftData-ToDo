@@ -27,17 +27,22 @@ final class Note {
     /// A flag that determines if note is completed
     var isCompleted: Bool
     
+    /// Attached image data
+    @Attribute(.externalStorage) var imageData: Data?
+    
     init(
         title: String,
         text: String = "",
         timestamp: Date = .now,
         dueDate: Date? = nil,
-        isCompleted: Bool = false
+        isCompleted: Bool = false,
+        imageData: Data? = nil
     ) {
         self.title = title
         self.text = text
         self.timestamp = timestamp
         self.dueDate = dueDate
         self.isCompleted = isCompleted
+        self.imageData = imageData
     }
 }
