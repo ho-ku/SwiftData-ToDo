@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		37A31C692AEEE24600124837 /* NotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A31C682AEEE24600124837 /* NotesRepository.swift */; };
 		37A31C6B2AEF9CF300124837 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A31C6A2AEF9CF300124837 /* Dependencies.swift */; };
+		37A31C6E2AEF9E3100124837 /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A31C6D2AEF9E3100124837 /* NotesListView.swift */; };
+		37A31C722AEF9FF400124837 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A31C712AEF9FF400124837 /* Image.swift */; };
+		37A31C742AEFA0D300124837 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A31C732AEFA0D300124837 /* SettingsView.swift */; };
 		37BD2E8F2AEEA48C00D70090 /* ToDo_SwiftDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD2E8E2AEEA48C00D70090 /* ToDo_SwiftDataApp.swift */; };
 		37BD2E912AEEA48C00D70090 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD2E902AEEA48C00D70090 /* ContentView.swift */; };
 		37BD2E932AEEA48C00D70090 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD2E922AEEA48C00D70090 /* Item.swift */; };
@@ -20,6 +23,9 @@
 /* Begin PBXFileReference section */
 		37A31C682AEEE24600124837 /* NotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRepository.swift; sourceTree = "<group>"; };
 		37A31C6A2AEF9CF300124837 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		37A31C6D2AEF9E3100124837 /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
+		37A31C712AEF9FF400124837 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		37A31C732AEFA0D300124837 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		37BD2E8B2AEEA48C00D70090 /* ToDo-SwiftData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo-SwiftData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BD2E8E2AEEA48C00D70090 /* ToDo_SwiftDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_SwiftDataApp.swift; sourceTree = "<group>"; };
 		37BD2E902AEEA48C00D70090 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +65,15 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		37A31C6C2AEF9E2200124837 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				37A31C6D2AEF9E3100124837 /* NotesListView.swift */,
+				37A31C732AEFA0D300124837 /* SettingsView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		37BD2E822AEEA48C00D70090 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +93,7 @@
 		37BD2E8D2AEEA48C00D70090 /* ToDo-SwiftData */ = {
 			isa = PBXGroup;
 			children = (
+				37A31C6C2AEF9E2200124837 /* UI */,
 				37A31C662AEEE23300124837 /* Core */,
 				37BD2E9F2AEEA4A200D70090 /* App */,
 				37BD2E9E2AEEA49D00D70090 /* Resources */,
@@ -100,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				37BD2E942AEEA48D00D70090 /* Assets.xcassets */,
+				37A31C712AEF9FF400124837 /* Image.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -192,9 +209,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				37A31C6B2AEF9CF300124837 /* Dependencies.swift in Sources */,
+				37A31C722AEF9FF400124837 /* Image.swift in Sources */,
 				37BD2EA52AEEA79000D70090 /* Note.swift in Sources */,
+				37A31C742AEFA0D300124837 /* SettingsView.swift in Sources */,
 				37BD2E912AEEA48C00D70090 /* ContentView.swift in Sources */,
 				37BD2E932AEEA48C00D70090 /* Item.swift in Sources */,
+				37A31C6E2AEF9E3100124837 /* NotesListView.swift in Sources */,
 				37BD2E8F2AEEA48C00D70090 /* ToDo_SwiftDataApp.swift in Sources */,
 				37A31C692AEEE24600124837 /* NotesRepository.swift in Sources */,
 			);
