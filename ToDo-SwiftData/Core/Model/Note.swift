@@ -22,7 +22,7 @@ final class Note {
     var timestamp: Date
     
     /// Notes due date
-    var dueDate: Date?
+    var dueDate: Date
     
     /// A flag that determines if note is completed
     var isCompleted: Bool
@@ -34,7 +34,7 @@ final class Note {
         title: String,
         text: String = "",
         timestamp: Date = .now,
-        dueDate: Date? = nil,
+        dueDate: Date = Calendar.current.startOfDay(for: .now.addingTimeInterval(86400)),
         isCompleted: Bool = false,
         imageData: Data? = nil
     ) {

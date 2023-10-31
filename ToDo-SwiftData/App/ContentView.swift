@@ -15,7 +15,7 @@ struct ContentView: View {
                 .toolbar {
                     NavigationLink(destination: SettingsView.init) {
                         Image(imageName: .gear)
-                            .foregroundColor(.black)
+                            .foregroundStyle(.black)
                     }
                 }
         }

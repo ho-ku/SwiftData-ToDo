@@ -9,6 +9,9 @@ import SwiftUI
 
 enum ImageName: String {
     case gear
+    case chevronLeft = "chevron.left"
+    case chevronRight = "chevron.right"
+    case checkmark = "checkmark.circle.fill"
 }
 
 extension Image {
