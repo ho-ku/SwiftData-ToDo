@@ -1,0 +1,89 @@
+//
+//  NotesListDetailView.swift
+//  ToDo-SwiftData
+//
+//  Created by Денис Андриевский on 31.10.2023.
+//
+
+import SwiftUI
+import SwiftData
+
+private extension View {
+    func withNeededListModifiers() -> some View {
+        self
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            .listRowInsets(.init(top: .zero, leading: .zero, bottom: .zero, trailing: .zero))
+            .listRowBackground(Color.white)
+    }
+}
+
+struct NotesListDetailView: View {
+    
+    // MARK: - Properties
+    
+    @Query var incompletedNotes: [Note]
+    @Query var completedNotes: [Note]
+    var onDelete: ([Note]) -> Void
+    
+    // MARK: - Init
+    
+    init(selectedDate: Date, onDelete: @escaping ([Note]) -> Void) {
+        let startOfTheDay = Calendar.current.date(bySettingHour: .zero, minute: .zero, second: .zero, of: selectedDate) ?? .now
+        let endOfTheDay = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: selectedDate) ?? .now
+        
+        _incompletedNotes = Query(filter: #Predicate<Note> {
+            $0.dueDate > startOfTheDay && $0.dueDate <= endOfTheDay && !$0.isCompleted
+        }, sort: [SortDescriptor(\Note.dueDate, order: .forward)], animation: .easeInOut)
+        
+        _completedNotes = Query(filter: #Predicate<Note> {
+            $0.dueDate > startOfTheDay && $0.dueDate <= endOfTheDay && $0.isCompleted
+        }, sort: [SortDescriptor(\Note.dueDate, order: .forward)], animation: .easeInOut)
+        
+        self.onDelete = onDelete
+    }
+    
+    // MARK: - Body
+    
+    var body: some View {
+        List {
+            ForEach(incompletedNotes, id: \.id) { note in
+                NoteView(note: note, style: .blue)
+                    .withNeededListModifiers()
+            }
+            .onDelete(perform: deleteIncompletedSelections)
+            
+            if !completedNotes.isEmpty {
+                Text(String(name: .completed))
+                    .foregroundStyle(.blue)
+                    .font(.headline)
+                    .withNeededListModifiers()
+            }
+            
+            ForEach(completedNotes, id: \.id) { note in
+                NoteView(note: note, style: .blue)
+                    .withNeededListModifiers()
+            }
+            .onDelete(perform: deleteCompletedSelections)
+        }
+        .listStyle(.inset)
+        .listRowSpacing(8)
+        .padding(.horizontal)
+        .background(.white)
+    }
+    
+    // MARK: - Private Helpers
+    
+    private func deleteCompletedSelections(indexsSet: IndexSet) {
+        onDelete(indexsSet.map { completedNotes[$0] })
+    }
+    
+    private func deleteIncompletedSelections(indexsSet: IndexSet) {
+        onDelete(indexsSet.map { incompletedNotes[$0] })
+    }
+}
+
+#Preview {
+    NotesListDetailView(selectedDate: .now) { _ in }
+        .withPreviewContext()
+}

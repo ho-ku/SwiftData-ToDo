@@ -9,23 +9,28 @@ import SwiftUI
 
 struct Checkbox: View {
     
-    var isOn: Bool
+    // MARK: - Properties
+    
+    let isOn: Bool
+    let color: Color
+    
+    // MARK: - Body
     
     var body: some View {
         if isOn {
             Image(imageName: .checkmark)
                 .resizable()
                 .scaledToFit()
-                .foregroundStyle(.blue)
+                .foregroundStyle(color)
                 .clipShape(Circle())
         } else {
             Circle()
                 .fill(.blue.opacity(0.01))
-                .stroke(.blue)
+                .stroke(color)
         }
     }
 }
 
 #Preview {
-    Checkbox(isOn: false)
+    Checkbox(isOn: false, color: .blue)
 }

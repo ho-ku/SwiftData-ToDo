@@ -17,6 +17,7 @@ struct NotesListView: View {
     // MARK: - Properties
     
     @Environment(\.modelContext) var modelContext
+    @ObservedObject var viewModel: NotesListViewModel
     
     // Private properties
     @State private var selectedDate: Date = .now
@@ -29,6 +30,12 @@ struct NotesListView: View {
         }
     }
     
+    // MARK: - Init
+    
+    init() {
+        viewModel = ServiceLocator.resolve()
+    }
+    
     // MARK: - Body
     
     var body: some View {
@@ -37,7 +44,9 @@ struct NotesListView: View {
                 calendarView
                     .padding()
                 
-                NotesListDetailView(selectedDate: selectedDate)
+                NotesListDetailView(selectedDate: selectedDate) { notesToDelete in
+                    notesToDelete.forEach { viewModel.delete($0) }
+                }
             }
         }
     }

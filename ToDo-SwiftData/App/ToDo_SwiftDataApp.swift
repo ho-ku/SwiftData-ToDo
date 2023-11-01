@@ -10,10 +10,22 @@ import SwiftData
 
 @main
 struct ToDo_SwiftDataApp: App {
+    
+    private let container: ModelContainer
+    
+    init() {
+        do {
+            container = try ModelContainer(for: Note.self)
+            Dependencies.registerAll(modelContext: container.mainContext)
+        } catch {
+            fatalError("Failed to create model container")
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Note.self)
+        .modelContainer(container)
     }
 }
