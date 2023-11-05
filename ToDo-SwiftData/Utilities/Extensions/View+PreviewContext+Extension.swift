@@ -16,9 +16,9 @@ extension View {
             let container = try ModelContainer(for: Note.self,
                                                configurations: config)
             let examples = [
-                Note(title: "Task1", text: "This is a description of task number 1", timestamp: .now, dueDate: .now.addingTimeInterval(500), isCompleted: false),
-                Note(title: "Task2", text: "This is a description of task number 2", timestamp: .now, dueDate: .now.addingTimeInterval(600), isCompleted: false),
-                Note(title: "Task3", text: "This is a description of task number 3", timestamp: .now, dueDate: .now.addingTimeInterval(700), isCompleted: true)
+                Note(title: "Task1", timestamp: .now, dueDate: .now.addingTimeInterval(500), isCompleted: false),
+                Note(title: "Task2", timestamp: .now, dueDate: .now.addingTimeInterval(600), isCompleted: false),
+                Note(title: "Task3", timestamp: .now, dueDate: .now.addingTimeInterval(700), isCompleted: true)
             ]
             for example in examples {
                 container.mainContext.insert(example)

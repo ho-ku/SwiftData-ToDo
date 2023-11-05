@@ -10,6 +10,9 @@ import Foundation
 enum StringName: String {
     case today = "TODAY"
     case completed = "COMPLETED"
+    case chooseImage = "Choose image"
+    case deleteImage = "Delete image"
+    case pickAnImage = "Pick an image"
 }
 
 extension String {

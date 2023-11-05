@@ -9,62 +9,68 @@ import SwiftUI
 
 struct NoteView: View {
     
-    enum Style {
-        case blue
-        case pink
-        case yellow
-        case green
-        
-        var colors: (foreground: Color, background: Color) {
-            switch self {
-            case .blue:
-                return (.appBlue, .appBlueBackground)
-            case .pink:
-                return (.appPink, .appPinkBackground)
-            case .yellow:
-                return (.appYellow, .appYellowBackground)
-            case .green:
-                return (.appGreen, .appGreenBackground)
-            }
-        }
-    }
-    
     // MARK: - Properties
     
     @Bindable var note: Note
-    let style: Style
+    
+    @State private var isFullPresentation = false
     
     // MARK: - Body
     
     var body: some View {
-        HStack {
-            Rectangle()
-                .fill(style.colors.foreground)
-                .frame(width: 2)
-                .frame(maxHeight: .infinity)
-            
-            VStack {
-                Text(DateFormatter.hourMinute.string(from: note.dueDate))
-                    .foregroundStyle(style.colors.foreground)
-                    .font(.system(.callout, design: .rounded))
-                    .bold()
-                
-                Text(note.title)
-                    .foregroundStyle(style.colors.foreground)
-                    .font(.system(.callout, design: .rounded))
-                    .bold()
-            }
-            .padding(.vertical, 12)
-            
-            Spacer()
-            
-            Checkbox(isOn: note.isCompleted, color: style.colors.foreground)
-                .frame(width: 24)
-                .padding(.trailing)
+        ZStack {
+            note.style.colors.background
                 .onTapGesture {
-                    withAnimation { note.isCompleted.toggle() }
+                    withAnimation(.easeInOut(duration: 0.3)) { isFullPresentation.toggle() }
                 }
+            
+            HStack(alignment: .top) {
+                Rectangle()
+                    .fill(note.style.colors.foreground)
+                    .frame(width: 2)
+                    .frame(maxHeight: .infinity)
+                
+                VStack {
+                    HStack {
+                        shortInfo
+                        Spacer()
+                    }
+                    .padding(.top)
+                    
+                    ImagePickerView(
+                        selectedImageData: $note.imageData,
+                        viewData: .init(
+                            title: String(name: .chooseImage),
+                            removeTitle: String(name: .deleteImage)
+                        ), style: note.style
+                    )
+                    .isHidden(!isFullPresentation, originHeight: 140)
+                    .padding(.top)
+                }
+                .padding(.bottom)
+                
+                Checkbox(isOn: note.isCompleted, color: note.style.colors.foreground)
+                    .frame(width: 24)
+                    .padding([.trailing, .top])
+                    .onTapGesture { withAnimation { note.isCompleted.toggle() } }
+            }
         }
-        .background(style.colors.background)
+    }
+}
+
+private extension NoteView {
+    var shortInfo: some View {
+        VStack(alignment: .leading) {
+            Text(DateFormatter.hourMinute.string(from: note.dueDate))
+                .foregroundStyle(note.style.colors.foreground)
+                .font(.system(.subheadline, design: .rounded))
+                .bold()
+            
+            TextField("", text: $note.title)
+                .foregroundStyle(note.style.colors.foreground)
+                .font(.system(.headline, design: .rounded))
+                .bold()
+                .frame(height: 20)
+        }
     }
 }

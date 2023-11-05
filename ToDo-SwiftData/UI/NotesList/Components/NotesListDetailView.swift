@@ -32,13 +32,18 @@ struct NotesListDetailView: View {
         let startOfTheDay = Calendar.current.date(bySettingHour: .zero, minute: .zero, second: .zero, of: selectedDate) ?? .now
         let endOfTheDay = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: selectedDate) ?? .now
         
+        let sort = [
+            SortDescriptor(\Note.dueDate, order: .forward),
+            SortDescriptor(\Note.timestamp, order: .forward)
+        ]
+        
         _incompletedNotes = Query(filter: #Predicate<Note> {
             $0.dueDate > startOfTheDay && $0.dueDate <= endOfTheDay && !$0.isCompleted
-        }, sort: [SortDescriptor(\Note.dueDate, order: .forward)], animation: .easeInOut)
+        }, sort: sort, animation: .easeInOut)
         
         _completedNotes = Query(filter: #Predicate<Note> {
             $0.dueDate > startOfTheDay && $0.dueDate <= endOfTheDay && $0.isCompleted
-        }, sort: [SortDescriptor(\Note.dueDate, order: .forward)], animation: .easeInOut)
+        }, sort: sort, animation: .easeInOut)
         
         self.onDelete = onDelete
     }
@@ -48,7 +53,7 @@ struct NotesListDetailView: View {
     var body: some View {
         List {
             ForEach(incompletedNotes, id: \.id) { note in
-                NoteView(note: note, style: .blue)
+                NoteView(note: note)
                     .withNeededListModifiers()
             }
             .onDelete(perform: deleteIncompletedSelections)
@@ -61,7 +66,7 @@ struct NotesListDetailView: View {
             }
             
             ForEach(completedNotes, id: \.id) { note in
-                NoteView(note: note, style: .blue)
+                NoteView(note: note)
                     .withNeededListModifiers()
             }
             .onDelete(perform: deleteCompletedSelections)
