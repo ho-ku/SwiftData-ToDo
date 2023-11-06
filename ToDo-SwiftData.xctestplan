@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "4350D0F5-4EA1-48B0-9353-524797A2EB26",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:ToDo-SwiftData.xcodeproj",
+          "identifier" : "37BD2E8A2AEEA48C00D70090",
+          "name" : "ToDo-SwiftData"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ToDo-SwiftData.xcodeproj",
+      "identifier" : "37BD2E8A2AEEA48C00D70090",
+      "name" : "ToDo-SwiftData"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ToDo-SwiftData.xcodeproj",
+        "identifier" : "37E241F72AF97EF9000675FD",
+        "name" : "ToDo-SwiftDataTests"
+      }
+    }
+  ],
+  "version" : 1
+}
