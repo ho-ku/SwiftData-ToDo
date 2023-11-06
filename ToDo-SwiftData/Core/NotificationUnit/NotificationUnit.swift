@@ -47,7 +47,7 @@ public enum NotificationAuthStatus: String {
 }
 
 /// User notification service
-public protocol INotificationUnit {
+public protocol AnyNotificationUnit {
     
     /// User notification authorization status
     var notificationAuthStatus: NotificationAuthStatus { get set }
@@ -59,7 +59,7 @@ public protocol INotificationUnit {
     func schedule(_ notification: NotesNotification, with interval: Interval) async throws
 }
 
-public final class NotificationUnit: INotificationUnit {
+public final class NotificationUnit: AnyNotificationUnit {
     
     // MARK: - Properties
     

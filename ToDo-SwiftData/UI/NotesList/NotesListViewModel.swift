@@ -12,22 +12,24 @@ final class NotesListViewModel: ObservableObject {
     // MARK: - Properties
     
     private let notesRepository: AnyNotesRepository
-    private let notificationUnit: INotificationUnit
+    private let notificationUnit: AnyNotificationUnit
     
     // MARK: - Init
     
-    init(notesRepository: AnyNotesRepository, notificationUnit: INotificationUnit) {
+    init(notesRepository: AnyNotesRepository, notificationUnit: AnyNotificationUnit) {
         self.notesRepository = notesRepository
         self.notificationUnit = notificationUnit
     }
     
     // MARK: - Methods
     
+    /// Delete note
     func delete(_ note: Note) {
         notesRepository.delete(note)
     }
     
-    func sendNotificationIfNeeded() {
+    /// Send notification with the amount of incompleted notes
+    func sendNotificationIfNeeded() async {
         let incompletedNotesCount = try? notesRepository.incompletedNotesCount
         guard let incompletedNotesCount, incompletedNotesCount != .zero else { return }
         let newNotification = NotesNotification(
@@ -35,12 +37,11 @@ final class NotesListViewModel: ObservableObject {
             title: "Incompleted tasks",
             description: "You have got \(incompletedNotesCount) incompleted tasks. Let's finish them"
         )
-        Task {
-            try? await notificationUnit.schedule(newNotification, with: .eightHour)
-        }
+        try? await notificationUnit.schedule(newNotification, with: .eightHour)
     }
     
-    func requestrNotificationAccess() async {
+    /// Request notification access
+    func requestNotificationAccess() async {
         try? await notificationUnit.requestAuthorization()
     }
     
