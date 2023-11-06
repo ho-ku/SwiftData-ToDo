@@ -8,7 +8,7 @@ Add total count of completed and uncompleted notes (✅)
 ## UI Layer
 Notes list view (✅)
 Add Note view (✅)
-Profile view (🟠)
+Profile view (✅)
 
 ## Final steps
 Image encryption (✅)

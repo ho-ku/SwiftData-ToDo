@@ -37,6 +37,7 @@ final class Dependencies {
         let notificationUnit = NotificationUnit(userNotificationCenter: notificationCenter) as INotificationUnit
         ServiceLocator.register(notificationUnit)
         
+        ServiceLocator.register(SettingsViewModel(notesRepository: repository))
         ServiceLocator.register(NotesListViewModel(notesRepository: repository, notificationUnit: notificationUnit))
         ServiceLocator.register(AddNoteViewModel(notesRepository: repository))
     }

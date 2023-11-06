@@ -34,6 +34,7 @@
 		37E241ED2AF96532000675FD /* NotificationUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E241EC2AF96532000675FD /* NotificationUnit.swift */; };
 		37E241F02AF9654D000675FD /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E241EE2AF9654D000675FD /* NotificationCenter.swift */; };
 		37E241F12AF9654D000675FD /* CMNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E241EF2AF9654D000675FD /* CMNotification.swift */; };
+		37E241F32AF97D80000675FD /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E241F22AF97D80000675FD /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		37E241EC2AF96532000675FD /* NotificationUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUnit.swift; sourceTree = "<group>"; };
 		37E241EE2AF9654D000675FD /* NotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		37E241EF2AF9654D000675FD /* CMNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMNotification.swift; sourceTree = "<group>"; };
+		37E241F22AF97D80000675FD /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				37A31C732AEFA0D300124837 /* SettingsView.swift */,
+				37E241F22AF97D80000675FD /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				375B26502AF1ADC300E60282 /* Checkbox.swift in Sources */,
 				37E241F02AF9654D000675FD /* NotificationCenter.swift in Sources */,
 				375B26472AF1A4FB00E60282 /* DateFormatter+Extension.swift in Sources */,
+				37E241F32AF97D80000675FD /* SettingsViewModel.swift in Sources */,
 				379136592AF7A4FE00417413 /* UIApplication+Extension.swift in Sources */,
 				3791365D2AF7B62300417413 /* View+Extension.swift in Sources */,
 				37A31C692AEEE24600124837 /* NotesRepository.swift in Sources */,

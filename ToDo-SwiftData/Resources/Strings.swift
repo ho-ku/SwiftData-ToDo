@@ -13,6 +13,9 @@ enum StringName: String {
     case chooseImage = "Choose image"
     case deleteImage = "Delete image"
     case pickAnImage = "Pick an image"
+    case settings = "Settings"
+    case open = "Open: "
+    case completedSettings = "Comleted: "
 }
 
 extension String {
