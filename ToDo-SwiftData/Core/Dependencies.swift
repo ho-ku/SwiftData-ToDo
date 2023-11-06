@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import UserNotifications
 
 public final class ServiceLocator {
     private static var services: [Any] = []
@@ -27,9 +28,16 @@ public final class ServiceLocator {
 final class Dependencies {
     static func registerAll(modelContext: ModelContext) {
         ServiceLocator.register(modelContext)
+        
         let repository: AnyNotesRepository = NotesRepository(modelContext: modelContext)
         ServiceLocator.register(repository)
-        ServiceLocator.register(NotesListViewModel(notesRepository: repository))
+        
+        let notificationCenter = UNUserNotificationCenter.current()
+        ServiceLocator.register(notificationCenter as NotesNotificationCenter)
+        let notificationUnit = NotificationUnit(userNotificationCenter: notificationCenter) as INotificationUnit
+        ServiceLocator.register(notificationUnit)
+        
+        ServiceLocator.register(NotesListViewModel(notesRepository: repository, notificationUnit: notificationUnit))
         ServiceLocator.register(AddNoteViewModel(notesRepository: repository))
     }
 }

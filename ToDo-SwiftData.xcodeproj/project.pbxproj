@@ -31,6 +31,9 @@
 		37BD2E982AEEA48D00D70090 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37BD2E972AEEA48D00D70090 /* Preview Assets.xcassets */; };
 		37BD2EA52AEEA79000D70090 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD2EA42AEEA79000D70090 /* Note.swift */; };
 		37E241EA2AF96489000675FD /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E241E92AF96489000675FD /* AddNoteViewModel.swift */; };
+		37E241ED2AF96532000675FD /* NotificationUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E241EC2AF96532000675FD /* NotificationUnit.swift */; };
+		37E241F02AF9654D000675FD /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E241EE2AF9654D000675FD /* NotificationCenter.swift */; };
+		37E241F12AF9654D000675FD /* CMNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E241EF2AF9654D000675FD /* CMNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		37BD2EA02AEEA4B700D70090 /* TASK.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TASK.md; sourceTree = "<group>"; };
 		37BD2EA42AEEA79000D70090 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		37E241E92AF96489000675FD /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
+		37E241EC2AF96532000675FD /* NotificationUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUnit.swift; sourceTree = "<group>"; };
+		37E241EE2AF9654D000675FD /* NotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
+		37E241EF2AF9654D000675FD /* CMNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 		37A31C662AEEE23300124837 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				37E241EB2AF96528000675FD /* NotificationUnit */,
 				37A31C672AEEE23B00124837 /* Repositories */,
 				37BD2EA12AEEA6EE00D70090 /* Model */,
 				37A31C6A2AEF9CF300124837 /* Dependencies.swift */,
@@ -241,6 +248,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		37E241EB2AF96528000675FD /* NotificationUnit */ = {
+			isa = PBXGroup;
+			children = (
+				37E241EF2AF9654D000675FD /* CMNotification.swift */,
+				37E241EE2AF9654D000675FD /* NotificationCenter.swift */,
+				37E241EC2AF96532000675FD /* NotificationUnit.swift */,
+			);
+			path = NotificationUnit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,6 +338,7 @@
 				375B26582AF23D4B00E60282 /* Color.swift in Sources */,
 				37BD2E912AEEA48C00D70090 /* ContentView.swift in Sources */,
 				375B26522AF1B38E00E60282 /* Strings.swift in Sources */,
+				37E241ED2AF96532000675FD /* NotificationUnit.swift in Sources */,
 				37E241EA2AF96489000675FD /* AddNoteViewModel.swift in Sources */,
 				379136572AF7A45600417413 /* ImagePickerController.swift in Sources */,
 				37A31C6E2AEF9E3100124837 /* NotesListView.swift in Sources */,
@@ -329,10 +347,12 @@
 				375B264B2AF1A57C00E60282 /* View+PreviewContext+Extension.swift in Sources */,
 				375B26562AF23D4000E60282 /* NoteView.swift in Sources */,
 				375B26502AF1ADC300E60282 /* Checkbox.swift in Sources */,
+				37E241F02AF9654D000675FD /* NotificationCenter.swift in Sources */,
 				375B26472AF1A4FB00E60282 /* DateFormatter+Extension.swift in Sources */,
 				379136592AF7A4FE00417413 /* UIApplication+Extension.swift in Sources */,
 				3791365D2AF7B62300417413 /* View+Extension.swift in Sources */,
 				37A31C692AEEE24600124837 /* NotesRepository.swift in Sources */,
+				37E241F12AF9654D000675FD /* CMNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

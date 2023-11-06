@@ -1,7 +1,7 @@
 import UIKit
 
 /// Notification center
-public protocol CMNotificationCenter {
+public protocol NotesNotificationCenter {
     
     /// Request authorization
     /// Returns bool value that stands for allownce to send notifications
@@ -11,4 +11,4 @@ public protocol CMNotificationCenter {
     func add(_ request: UNNotificationRequest) async throws
 }
 
-extension UNUserNotificationCenter: CMNotificationCenter { }
+extension UNUserNotificationCenter: NotesNotificationCenter { }

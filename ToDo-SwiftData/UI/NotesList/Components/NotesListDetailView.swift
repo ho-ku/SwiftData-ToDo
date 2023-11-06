@@ -25,10 +25,11 @@ struct NotesListDetailView: View {
     @Query var incompletedNotes: [Note]
     @Query var completedNotes: [Note]
     var onDelete: ([Note]) -> Void
+    var onNoteCompletionUpdate: () -> Void
     
     // MARK: - Init
     
-    init(selectedDate: Date, onDelete: @escaping ([Note]) -> Void) {
+    init(selectedDate: Date, onDelete: @escaping ([Note]) -> Void, onNoteCompletionUpdate: @escaping () -> Void) {
         let startOfTheDay = Calendar.current.date(bySettingHour: .zero, minute: .zero, second: .zero, of: selectedDate) ?? .now
         let endOfTheDay = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: selectedDate) ?? .now
         
@@ -46,6 +47,7 @@ struct NotesListDetailView: View {
         }, sort: sort, animation: .easeInOut)
         
         self.onDelete = onDelete
+        self.onNoteCompletionUpdate = onNoteCompletionUpdate
     }
     
     // MARK: - Body
@@ -53,7 +55,7 @@ struct NotesListDetailView: View {
     var body: some View {
         List {
             ForEach(incompletedNotes, id: \.id) { note in
-                NoteView(note: note)
+                NoteView(note: note, onCompletionUpdate: onNoteCompletionUpdate)
                     .withNeededListModifiers()
             }
             .onDelete(perform: deleteIncompletedSelections)
@@ -66,7 +68,7 @@ struct NotesListDetailView: View {
             }
             
             ForEach(completedNotes, id: \.id) { note in
-                NoteView(note: note)
+                NoteView(note: note, onCompletionUpdate: onNoteCompletionUpdate)
                     .withNeededListModifiers()
             }
             .onDelete(perform: deleteCompletedSelections)
@@ -118,6 +120,6 @@ private extension NotesListDetailView {
 }
 
 #Preview {
-    NotesListDetailView(selectedDate: .now) { _ in }
+    NotesListDetailView(selectedDate: .now) { _ in } onNoteCompletionUpdate: { }
         .withPreviewContext()
 }

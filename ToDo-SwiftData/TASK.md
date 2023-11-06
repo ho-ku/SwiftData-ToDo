@@ -13,6 +13,6 @@ Profile view (🟠)
 ## Final steps
 Image encryption (✅)
 Connect CloudKit (🟠)
-Send local notification with the amount of overdued tasks (🟠)
+Send local notification with the amount of overdued tasks (✅)
 Unit tests coverage (🟠)
 Setup CI workflow (🟠)

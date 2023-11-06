@@ -45,7 +45,12 @@ struct NotesListView: View {
                 
                 NotesListDetailView(selectedDate: selectedDate) { notesToDelete in
                     notesToDelete.forEach { viewModel.delete($0) }
+                } onNoteCompletionUpdate: {
+                    viewModel.sendNotificationIfNeeded()
                 }
+            }
+            .task {
+                await viewModel.requestrNotificationAccess()
             }
         }
     }

@@ -1,7 +1,7 @@
 import Foundation
 
 /// Wrapper for user notification model
-public struct CMNotification {
+public struct NotesNotification {
     public let id: String
     public let title: String
     public let description: String

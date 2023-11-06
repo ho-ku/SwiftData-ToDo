@@ -12,6 +12,7 @@ struct NoteView: View {
     // MARK: - Properties
     
     @Bindable var note: Note
+    var onCompletionUpdate: () -> Void
     
     @State private var isFullPresentation = false
     
@@ -53,6 +54,9 @@ struct NoteView: View {
                     .frame(width: 24)
                     .padding([.trailing, .top])
                     .onTapGesture { withAnimation { note.isCompleted.toggle() } }
+                    .onChange(of: note.isCompleted) { _, _ in
+                        onCompletionUpdate()
+                    }
             }
         }
     }
