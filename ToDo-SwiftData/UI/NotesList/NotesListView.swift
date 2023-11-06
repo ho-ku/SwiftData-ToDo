@@ -16,7 +16,6 @@ struct NotesListView: View {
     
     // MARK: - Properties
     
-    @Environment(\.modelContext) var modelContext
     @ObservedObject var viewModel: NotesListViewModel
     
     // Private properties

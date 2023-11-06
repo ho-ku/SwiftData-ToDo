@@ -12,6 +12,7 @@ enum ImageName: String {
     case chevronLeft = "chevron.left"
     case chevronRight = "chevron.right"
     case checkmark = "checkmark.circle.fill"
+    case plus = "plus"
 }
 
 extension Image {

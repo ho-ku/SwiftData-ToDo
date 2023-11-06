@@ -75,6 +75,7 @@ struct NotesListDetailView: View {
         .listRowSpacing(8)
         .padding(.horizontal)
         .background(.white)
+        .overlay(createButton)
     }
     
     // MARK: - Private Helpers
@@ -85,6 +86,34 @@ struct NotesListDetailView: View {
     
     private func deleteIncompletedSelections(indexsSet: IndexSet) {
         onDelete(indexsSet.map { incompletedNotes[$0] })
+    }
+}
+
+// MARK: - Add Note
+
+private extension NotesListDetailView {
+    var createButton: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                NavigationLink {
+                    AddNoteView(previousStyle: incompletedNotes.last?.style ?? .green)
+                } label: {
+                    Circle()
+                        .fill(Color.appBlue)
+                        .frame(width: 50, height: 50)
+                        .overlay(
+                            Image(imageName: .plus)
+                                .foregroundStyle(.white)
+                                .font(.system(size: 30))
+                                .bold()
+                        )
+                }
+            }
+        }
+        .padding(.bottom, 36)
+        .padding(.trailing)
     }
 }
 

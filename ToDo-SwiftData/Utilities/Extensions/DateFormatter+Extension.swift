@@ -16,7 +16,7 @@ extension DateFormatter {
     
     static var hourMinute: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm"
+        formatter.dateFormat = "HH:mm"
         return formatter
     }
 }

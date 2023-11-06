@@ -19,6 +19,7 @@
 		379136572AF7A45600417413 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379136562AF7A45600417413 /* ImagePickerController.swift */; };
 		379136592AF7A4FE00417413 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379136582AF7A4FE00417413 /* UIApplication+Extension.swift */; };
 		3791365D2AF7B62300417413 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3791365C2AF7B62300417413 /* View+Extension.swift */; };
+		379136602AF8410E00417413 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3791365F2AF8410E00417413 /* AddNoteView.swift */; };
 		37A31C692AEEE24600124837 /* NotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A31C682AEEE24600124837 /* NotesRepository.swift */; };
 		37A31C6B2AEF9CF300124837 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A31C6A2AEF9CF300124837 /* Dependencies.swift */; };
 		37A31C6E2AEF9E3100124837 /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A31C6D2AEF9E3100124837 /* NotesListView.swift */; };
@@ -26,10 +27,10 @@
 		37A31C742AEFA0D300124837 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A31C732AEFA0D300124837 /* SettingsView.swift */; };
 		37BD2E8F2AEEA48C00D70090 /* ToDo_SwiftDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD2E8E2AEEA48C00D70090 /* ToDo_SwiftDataApp.swift */; };
 		37BD2E912AEEA48C00D70090 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD2E902AEEA48C00D70090 /* ContentView.swift */; };
-		37BD2E932AEEA48C00D70090 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD2E922AEEA48C00D70090 /* Item.swift */; };
 		37BD2E952AEEA48D00D70090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37BD2E942AEEA48D00D70090 /* Assets.xcassets */; };
 		37BD2E982AEEA48D00D70090 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37BD2E972AEEA48D00D70090 /* Preview Assets.xcassets */; };
 		37BD2EA52AEEA79000D70090 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD2EA42AEEA79000D70090 /* Note.swift */; };
+		37E241EA2AF96489000675FD /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E241E92AF96489000675FD /* AddNoteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		379136562AF7A45600417413 /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		379136582AF7A4FE00417413 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		3791365C2AF7B62300417413 /* View+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		3791365F2AF8410E00417413 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 		37A31C682AEEE24600124837 /* NotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRepository.swift; sourceTree = "<group>"; };
 		37A31C6A2AEF9CF300124837 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		37A31C6D2AEF9E3100124837 /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
@@ -53,11 +55,11 @@
 		37BD2E8B2AEEA48C00D70090 /* ToDo-SwiftData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo-SwiftData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BD2E8E2AEEA48C00D70090 /* ToDo_SwiftDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_SwiftDataApp.swift; sourceTree = "<group>"; };
 		37BD2E902AEEA48C00D70090 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		37BD2E922AEEA48C00D70090 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		37BD2E942AEEA48D00D70090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37BD2E972AEEA48D00D70090 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		37BD2EA02AEEA4B700D70090 /* TASK.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TASK.md; sourceTree = "<group>"; };
 		37BD2EA42AEEA79000D70090 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		37E241E92AF96489000675FD /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,15 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
+		3791365E2AF8410500417413 /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				3791365F2AF8410E00417413 /* AddNoteView.swift */,
+				37E241E92AF96489000675FD /* AddNoteViewModel.swift */,
+			);
+			path = AddNote;
+			sourceTree = "<group>";
+		};
 		37A31C662AEEE23300124837 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +167,7 @@
 		37A31C6C2AEF9E2200124837 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3791365E2AF8410500417413 /* AddNote */,
 				375B26542AF1B44200E60282 /* Settings */,
 				375B26532AF1B3E800E60282 /* NotesList */,
 				375B264E2AF1ADBB00E60282 /* Components */,
@@ -187,7 +199,6 @@
 				37A31C662AEEE23300124837 /* Core */,
 				37BD2E9F2AEEA4A200D70090 /* App */,
 				37BD2E9E2AEEA49D00D70090 /* Resources */,
-				37BD2E922AEEA48C00D70090 /* Item.swift */,
 				37BD2E962AEEA48D00D70090 /* Preview Content */,
 				37BD2EA02AEEA4B700D70090 /* TASK.md */,
 			);
@@ -310,9 +321,10 @@
 				375B26582AF23D4B00E60282 /* Color.swift in Sources */,
 				37BD2E912AEEA48C00D70090 /* ContentView.swift in Sources */,
 				375B26522AF1B38E00E60282 /* Strings.swift in Sources */,
+				37E241EA2AF96489000675FD /* AddNoteViewModel.swift in Sources */,
 				379136572AF7A45600417413 /* ImagePickerController.swift in Sources */,
-				37BD2E932AEEA48C00D70090 /* Item.swift in Sources */,
 				37A31C6E2AEF9E3100124837 /* NotesListView.swift in Sources */,
+				379136602AF8410E00417413 /* AddNoteView.swift in Sources */,
 				37BD2E8F2AEEA48C00D70090 /* ToDo_SwiftDataApp.swift in Sources */,
 				375B264B2AF1A57C00E60282 /* View+PreviewContext+Extension.swift in Sources */,
 				375B26562AF23D4000E60282 /* NoteView.swift in Sources */,

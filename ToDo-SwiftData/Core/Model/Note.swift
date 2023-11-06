@@ -51,7 +51,7 @@ final class Note {
     var style: Style
     
     /// Attached image data
-    @Attribute(.externalStorage) var imageData: Data?
+    @Attribute(.externalStorage, .allowsCloudEncryption) var imageData: Data?
     
     init(
         title: String,

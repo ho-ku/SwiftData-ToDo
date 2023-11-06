@@ -30,5 +30,6 @@ final class Dependencies {
         let repository: AnyNotesRepository = NotesRepository(modelContext: modelContext)
         ServiceLocator.register(repository)
         ServiceLocator.register(NotesListViewModel(notesRepository: repository))
+        ServiceLocator.register(AddNoteViewModel(notesRepository: repository))
     }
 }
