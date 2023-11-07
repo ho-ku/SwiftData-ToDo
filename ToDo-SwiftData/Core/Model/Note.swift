@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 import SwiftUI
 
-enum Style: Codable {
+enum Style: String, Codable {
     case blue
     case pink
     case green
@@ -36,36 +36,39 @@ enum Style: Codable {
 final class Note {
     
     /// Notes title
-    var title: String
+    var title: String = ""
     
     /// Notes creation timestamp
-    var timestamp: Date
+    var timestamp: Date = Date.now
     
     /// Notes due date
-    var dueDate: Date
+    var dueDate: Date = Calendar.current.startOfDay(for: .now.addingTimeInterval(86400))
     
     /// A flag that determines if note is completed
-    var isCompleted: Bool
+    var isCompleted: Bool = false
     
     /// Note style
-    var style: Style
+    var noteStyle: String = "blue"
+    
+    var style: Style {
+        .init(rawValue: noteStyle) ?? .blue
+    }
     
     /// Attached image data
-    @Attribute(.externalStorage, .allowsCloudEncryption) var imageData: Data?
+    @Attribute(.externalStorage, .allowsCloudEncryption) var imageData: Data? = nil
     
-    init(
-        title: String,
-        timestamp: Date = .now,
-        dueDate: Date = Calendar.current.startOfDay(for: .now.addingTimeInterval(86400)),
-        isCompleted: Bool = false,
-        style: Style = .blue,
-        imageData: Data? = nil
+    init(title: String = "",
+         timestamp: Date = .now,
+         dueDate: Date = Calendar.current.startOfDay(for: .now.addingTimeInterval(86400)),
+         isCompleted: Bool = false,
+         style: Style = .blue,
+         imageData: Data? = nil
     ) {
         self.title = title
         self.timestamp = timestamp
         self.dueDate = dueDate
         self.isCompleted = isCompleted
-        self.style = style
+        self.noteStyle = style.rawValue
         self.imageData = imageData
     }
 }
