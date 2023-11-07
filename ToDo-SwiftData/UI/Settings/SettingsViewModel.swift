@@ -23,7 +23,9 @@ final class SettingsViewModel: ObservableObject {
     
     /// A percentage of completed notes
     var completionPercent: Int {
-        Int(100*Double(completedTasksCount)/(Double(completedTasksCount) + Double(incompletedTasksCount)))
+        let totalTasks = incompletedTasksCount + completedTasksCount
+        guard totalTasks != .zero else { return .zero }
+        return Int(100*Double(completedTasksCount)/Double(totalTasks))
     }
     
     private let notesRepository: AnyNotesRepository

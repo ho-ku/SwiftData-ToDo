@@ -15,7 +15,8 @@ struct ToDo_SwiftDataApp: App {
     
     init() {
         do {
-            container = try ModelContainer(for: Note.self)
+            let config = ModelConfiguration(cloudKitDatabase: .private("iCloud.com.todoapp-swiftdata"))
+            container = try ModelContainer(for: Note.self, configurations: config)
             Dependencies.registerAll(modelContext: container.mainContext)
         } catch {
             fatalError("Failed to create model container")
