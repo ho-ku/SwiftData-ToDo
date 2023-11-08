@@ -7,6 +7,8 @@ This is a simple ToDo application made fully by using SwiftData.
 The app generally consists of two screens:
 1. Tasks List screen - a list of all the tasks for a specific date. User can edit/add/delete task.
 2. Setting screen - a users task completion statistics.
+
+
 App utilizes such SwiftData functionality as:
 - Query. In order to fetch tasks Query property wrapper is used;
 - Predicate - to sort tasks;
